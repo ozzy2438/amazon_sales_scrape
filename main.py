@@ -325,6 +325,7 @@ async def scrape_product_details(crawler, product_urls, category_name):
     # Schema for product detail extraction
     product_detail_schema = {
         "name": "Amazon Product Details",
+        "baseSelector": "body",  # Tüm sayfa için baseSelector ekledik
         "fields": [
             {"name": "product_id", "selector": "input[name='ASIN']", "type": "attribute", "attribute": "value"},
             {"name": "product_name", "selector": "#productTitle", "type": "text"},
@@ -358,6 +359,13 @@ async def scrape_product_details(crawler, product_urls, category_name):
             if url.startswith('/'):
                 url = f"https://www.amazon.com{url}"
                 
+            # Extract product ID from URL if possible
+            import re
+            product_id = None
+            match = re.search(r'/dp/([A-Z0-9]{10})', url)
+            if match:
+                product_id = match.group(1)
+            
             logger.info(f"Scraping product details from: {url}")
             
             config = CrawlerRunConfig(
@@ -370,7 +378,10 @@ async def scrape_product_details(crawler, product_urls, category_name):
             
             if result.success and result.extracted_content:
                 product_data = json.loads(result.extracted_content)
+                if product_id and not product_data.get("product_id"):
+                    product_data["product_id"] = product_id
                 product_data["category"] = category_name
+                product_data["product_url"] = url
                 results.append(product_data)
                 logger.info(f"Successfully extracted detailed data for product")
             else:
@@ -758,12 +769,32 @@ async def main():
             for category_name, products in bestsellers.items():
                 category_product_urls = []
                 for product in products:
+                    # Extract any missing product IDs from URLs
                     if "product_link" in product and product["product_link"]:
                         product_url = product["product_link"]
                         # Ensure URL is absolute
                         if product_url.startswith('/'):
                             product_url = f"https://www.amazon.com{product_url}"
+                        
+                        # Extract product ID from URL if not already present
+                        if not product.get("product_id"):
+                            import re
+                            match = re.search(r'/dp/([A-Z0-9]{10})', product_url)
+                            if match:
+                                product["product_id"] = match.group(1)
+                        
                         category_product_urls.append(product_url)
+                
+                # Save product names for later use
+                for i, product in enumerate(products):
+                    if not product.get("product_name") and i < len(category_product_urls):
+                        # Extract product name from URL if possible
+                        url_parts = category_product_urls[i].split('/')
+                        if len(url_parts) > 3:
+                            product_name_part = url_parts[-2] if url_parts[-1].startswith('ref=') else url_parts[-1]
+                            product_name_part = product_name_part.split('?')[0]
+                            product_name = product_name_part.replace('-', ' ').title()
+                            product["product_name"] = product_name
                 
                 if category_product_urls:
                     # Sample a few products from each category for detailed scraping
@@ -792,17 +823,25 @@ async def main():
                     product_url = product.get("product_link")
                     product_name = product.get("product_name", "Unknown Product")
                     
+                    # Extract product ID from URL if not already present
+                    if not product_id and product_url:
+                        import re
+                        match = re.search(r'/dp/([A-Z0-9]{10})', product_url)
+                        if match:
+                            product_id = match.group(1)
+                            product["product_id"] = product_id
+                    
                     # Ensure URL is absolute
                     if product_url and product_url.startswith('/'):
                         product_url = f"https://www.amazon.com{product_url}"
                     
-                    if product_id or product_url:
+                    if product_id:  # Only try to scrape if we have a valid product_id
                         logger.info(f"Analyzing reviews for product: {product_name}")
                         reviews = await scrape_product_reviews(crawler, product_id, product_url)
                         
                         if reviews:
                             review_sample_count += 1
-                            product_key = f"{category_name}_{product_id if product_id else 'unknown'}"
+                            product_key = f"{category_name}_{product_id}"
                             all_reviews[product_key] = reviews
                             
                             # Analyze sentiment
@@ -835,7 +874,7 @@ async def main():
                     product_name = product.get("product_name", "Unknown Product")
                     current_price = product.get("discounted_price")
                     
-                    if product_id and product_name:
+                    if product_id and product_name and product_name != "Unknown Product":
                         logger.info(f"Analyzing competition for product: {product_name}")
                         
                         # Get competitive products
