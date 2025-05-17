@@ -1,0 +1,62 @@
+{
+  "overall": {
+    "price_review_correlation": -0.08536641299592725,
+    "price_review_r_squared": 0.007287424467791216,
+    "price_review_p_value": 0.26693405698214306,
+    "price_review_slope": -70.5894286092242,
+    "price_rating_correlation": -0.1531400740009368,
+    "price_rating_r_squared": 0.023451882265012405,
+    "price_rating_p_value": 0.04553382161814831,
+    "price_rating_slope": -0.0006694659227291629
+  },
+  "by_category": [
+    {
+      "category": "All Categories",
+      "count": 28,
+      "price_review_correlation": -0.17042961493855638,
+      "price_review_r_squared": 0.0290462536481046,
+      "price_review_p_value": 0.3858974789912717,
+      "price_review_slope": -22.95316137415555,
+      "price_rating_correlation": -0.06324891142876343,
+      "price_rating_r_squared": 0.00400042479692356,
+      "price_rating_p_value": 0.7491629981236764,
+      "price_rating_slope": -0.0002312805667487157
+    },
+    {
+      "category": "Electronics",
+      "count": 56,
+      "price_review_correlation": -0.22423385915957994,
+      "price_review_r_squared": 0.05028082359359832,
+      "price_review_p_value": 0.09663375342688839,
+      "price_review_slope": -218.48921763846442,
+      "price_rating_correlation": -0.24368229283090806,
+      "price_rating_r_squared": 0.05938105983932844,
+      "price_rating_p_value": 0.07032501435828871,
+      "price_rating_slope": -0.000845376777637229
+    },
+    {
+      "category": "Home & Kitchen",
+      "count": 29,
+      "price_review_correlation": -0.09968055262466415,
+      "price_review_r_squared": 0.009936212571558438,
+      "price_review_p_value": 0.6069245499191469,
+      "price_review_slope": -121.1293327041208,
+      "price_rating_correlation": -0.15003284531122976,
+      "price_rating_r_squared": 0.02250985467218339,
+      "price_rating_p_value": 0.43726235601157604,
+      "price_rating_slope": -0.0006365424170874066
+    },
+    {
+      "category": "Toys & Games",
+      "count": 58,
+      "price_review_correlation": 0.19391888439218868,
+      "price_review_r_squared": 0.03760453372391103,
+      "price_review_p_value": 0.14468100615072205,
+      "price_review_slope": 460.6218748952468,
+      "price_rating_correlation": 0.21064299477892107,
+      "price_rating_r_squared": 0.04437047124943255,
+      "price_rating_p_value": 0.11247808059325295,
+      "price_rating_slope": 0.003359253763033283
+    }
+  ]
+}

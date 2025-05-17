@@ -1,0 +1,70 @@
+{
+  "optimal_clusters": 2,
+  "silhouette_scores": {
+    "2": 0.8492357308443063,
+    "3": 0.7963570929288482,
+    "4": 0.6937022459182153,
+    "5": 0.6497688004813343,
+    "6": 0.6528478525048339,
+    "7": 0.5785462899652707,
+    "8": 0.5727467213642197,
+    "9": 0.5878516389874306,
+    "10": 0.5884680421999338
+  },
+  "segment_centers": {
+    "Budget": 20.319196428571423,
+    "Economy": 174.6988888888889
+  },
+  "segment_distribution": {
+    "Budget": 224,
+    "Economy": 18
+  },
+  "segment_stats": {
+    "Budget": {
+      "count": 224,
+      "price_mean": 20.319196428571427,
+      "price_median": 14.71,
+      "price_min": 0.58,
+      "price_max": 92.39,
+      "price_std": 17.88166601915033,
+      "rating_mean": 4.570560747663551,
+      "rating_count": "214",
+      "review_mean": 29574.5,
+      "review_sum": 4791069.0
+    },
+    "Economy": {
+      "count": 18,
+      "price_mean": 174.6988888888889,
+      "price_median": 158.49,
+      "price_min": 99.99,
+      "price_max": 291.01,
+      "price_std": 56.57167675133481,
+      "rating_mean": 4.422222222222223,
+      "rating_count": "18",
+      "review_mean": 14164.70588235294,
+      "review_sum": 240800.0
+    }
+  },
+  "segment_by_category": {
+    "Electronics": {
+      "Budget": 0.8448275862068966,
+      "Economy": 0.15517241379310345
+    },
+    "Books": {
+      "Budget": 1.0,
+      "Economy": 0.0
+    },
+    "Toys & Games": {
+      "Budget": 0.9833333333333333,
+      "Economy": 0.016666666666666666
+    },
+    "All Categories": {
+      "Budget": 0.8529411764705882,
+      "Economy": 0.14705882352941177
+    },
+    "Home & Kitchen": {
+      "Budget": 0.9,
+      "Economy": 0.1
+    }
+  }
+}

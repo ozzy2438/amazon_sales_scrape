@@ -1,0 +1,41 @@
+{
+  "source_comparison": {
+    "bestsellers": {
+      "price_mean": 29.732333333333337,
+      "price_median": 13.955,
+      "price_std": 46.087757619128645,
+      "rating_mean": 4.606818181818182,
+      "rating_count": "88",
+      "review_mean": 37691.8813559322,
+      "review_sum": 2223821.0,
+      "unique_products": 90
+    },
+    "trends": {
+      "price_mean": 40.08490322580646,
+      "price_median": 17.39,
+      "price_std": 69.29615861776817,
+      "rating_mean": 4.5246575342465745,
+      "rating_count": "146",
+      "review_mean": 23017.713114754097,
+      "review_sum": 2808161.0,
+      "unique_products": 154
+    }
+  },
+  "overlap_analysis": {
+    "bestsellers_and_trends": {
+      "overlap_count": 8,
+      "percentage_of_source1": 8.88888888888889,
+      "percentage_of_source2": 5.194805194805195,
+      "product_ids": [
+        "B0D3CSPMZG",
+        "059379625X",
+        "0593835956",
+        "B0DTYKCJC9",
+        "B0916TKFF2",
+        "B0CNQ5X4Y1",
+        "0399226907",
+        "B0D4YLQRMP"
+      ]
+    }
+  }
+}

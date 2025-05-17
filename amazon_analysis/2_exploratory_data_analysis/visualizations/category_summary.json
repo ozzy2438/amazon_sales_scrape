@@ -1,0 +1,42 @@
+[
+  {
+    "category": "All Categories",
+    "data_source": "trends",
+    "count": 36
+  },
+  {
+    "category": "Books",
+    "data_source": "bestsellers",
+    "count": 30
+  },
+  {
+    "category": "Books",
+    "data_source": "trends",
+    "count": 30
+  },
+  {
+    "category": "Electronics",
+    "data_source": "bestsellers",
+    "count": 30
+  },
+  {
+    "category": "Electronics",
+    "data_source": "trends",
+    "count": 30
+  },
+  {
+    "category": "Home & Kitchen",
+    "data_source": "trends",
+    "count": 30
+  },
+  {
+    "category": "Toys & Games",
+    "data_source": "bestsellers",
+    "count": 30
+  },
+  {
+    "category": "Toys & Games",
+    "data_source": "trends",
+    "count": 30
+  }
+]

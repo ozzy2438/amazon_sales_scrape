@@ -1,0 +1,80 @@
+{
+  "overall": {
+    "mean": 27801.005524861877,
+    "median": 9779.0,
+    "min": 3.0,
+    "max": 379436.0,
+    "std": 49957.378626462654,
+    "total": 5031982.0
+  },
+  "by_category": {
+    "mean": {
+      "All Categories": 7164.714285714285,
+      "Books": NaN,
+      "Electronics": 37511.58620689655,
+      "Home & Kitchen": 51970.566666666666,
+      "Toys & Games": 18041.862068965518
+    },
+    "median": {
+      "All Categories": 1399.0,
+      "Books": NaN,
+      "Electronics": 15931.0,
+      "Home & Kitchen": 23976.0,
+      "Toys & Games": 6190.0
+    },
+    "min": {
+      "All Categories": 3.0,
+      "Books": NaN,
+      "Electronics": 104.0,
+      "Home & Kitchen": 183.0,
+      "Toys & Games": 96.0
+    },
+    "max": {
+      "All Categories": 54121.0,
+      "Books": NaN,
+      "Electronics": 256223.0,
+      "Home & Kitchen": 379436.0,
+      "Toys & Games": 139180.0
+    },
+    "std": {
+      "All Categories": 13151.430833745426,
+      "Books": NaN,
+      "Electronics": 53749.89392695677,
+      "Home & Kitchen": 81188.42760567303,
+      "Toys & Games": 27814.615322245623
+    },
+    "sum": {
+      "All Categories": 250765.0,
+      "Books": 0.0,
+      "Electronics": 2175672.0,
+      "Home & Kitchen": 1559117.0,
+      "Toys & Games": 1046428.0
+    }
+  },
+  "by_data_source": {
+    "mean": {
+      "bestsellers": 37691.8813559322,
+      "trends": 23017.713114754097
+    },
+    "median": {
+      "bestsellers": 18387.0,
+      "trends": 5551.5
+    },
+    "min": {
+      "bestsellers": 396.0,
+      "trends": 3.0
+    },
+    "max": {
+      "bestsellers": 248980.0,
+      "trends": 379436.0
+    },
+    "std": {
+      "bestsellers": 47679.805128653476,
+      "trends": 50519.185348790474
+    },
+    "sum": {
+      "bestsellers": 2223821.0,
+      "trends": 2808161.0
+    }
+  }
+}

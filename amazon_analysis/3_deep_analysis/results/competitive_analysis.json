@@ -1,0 +1,49 @@
+{
+  "category_concentration": [
+    {
+      "category": "All Categories",
+      "product_count": 36,
+      "unique_products": 36,
+      "hhi": 1220.885405277123,
+      "avg_price": 57.38114285714286,
+      "price_range": 296.41,
+      "price_cv": 1.4292457844906845
+    },
+    {
+      "category": "Books",
+      "product_count": 60,
+      "unique_products": 53,
+      "hhi": NaN,
+      "avg_price": 11.923666666666666,
+      "price_range": 43.49,
+      "price_cv": 0.7809061882528142
+    },
+    {
+      "category": "Electronics",
+      "product_count": 60,
+      "unique_products": 59,
+      "hhi": 558.0956756145258,
+      "avg_price": 65.43549999999999,
+      "price_range": 442.02,
+      "price_cv": 1.3826982815127964
+    },
+    {
+      "category": "Home & Kitchen",
+      "product_count": 30,
+      "unique_products": 30,
+      "hhi": 1119.7067881492499,
+      "avg_price": 38.54633333333334,
+      "price_range": 182.18,
+      "price_cv": 1.1240647119475013
+    },
+    {
+      "category": "Toys & Games",
+      "product_count": 60,
+      "unique_products": 60,
+      "hhi": 575.1329304955543,
+      "avg_price": 18.046499999999998,
+      "price_range": 195.39,
+      "price_cv": 1.4632222528795928
+    }
+  ]
+}
